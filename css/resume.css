@@ -1,0 +1,160 @@
+/* ===== Styling based on the template's resume.css, simplified ===== */
+
+/* LAB STEP B10: change one colour. Change this value to restyle the whole site */
+:root {
+  --main-color: #174073;   /* navy blue (template was black) */
+}
+
+html {
+  scroll-behavior: smooth;           /* smooth scrolling when menu links are clicked */
+}
+
+body {
+  font-family: 'Muli', Arial, sans-serif;
+  color: #292a2b;
+  margin: 0;
+  padding-top: 54px;                 /* space for the top menu on phones */
+}
+
+/* Headings use the condensed font, like the template */
+h1, h2, h3 {
+  font-family: 'Saira Extra Condensed', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--main-color);
+  margin: 0 0 1rem 0;
+}
+
+h1 { font-size: 4rem; line-height: 1; }
+h2 { font-size: 3rem; }
+h3 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+
+.subheading {
+  font-family: 'Saira Extra Condensed', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* ----- Side menu (top bar on phones) ----- */
+#sideNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--main-color);
+  text-align: center;
+  z-index: 10;
+}
+
+#sideNav .profile-photo { display: none; }   /* hidden on phones */
+
+#sideNav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem 0;
+}
+
+#sideNav li { display: inline-block; }
+
+#sideNav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+}
+
+#sideNav a:hover { color: #cfd8e6; }
+
+/* ----- Sections ----- */
+section {
+  padding: 3rem 1.5rem;
+  max-width: 75rem;
+}
+
+hr { margin: 0; border: 0; border-top: 1px solid #ddd; }
+
+/* ----- Skills ----- */
+.skill-list {
+  font-size: 1.15rem;
+  line-height: 2;
+  padding-left: 1.2rem;
+}
+
+/* ----- Projects ----- */
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.project img {
+  width: 260px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.project div { flex: 1; min-width: 220px; }
+
+/* ----- Contact buttons ----- */
+.social-links a {
+  display: inline-block;
+  background-color: #030303;
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  margin-right: 0.5rem;
+}
+
+.social-links a:hover { background-color: rgb(83, 74, 74); }
+
+a { color: var(--main-color); }
+
+/* ----- Desktop: menu becomes a fixed sidebar ----- */
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+    padding-left: 17rem;             /* leave room for the sidebar */
+  }
+
+  #sideNav {
+    right: auto;
+    bottom: 0;
+    width: 17rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #sideNav .profile-photo {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto 1rem auto;
+  }
+
+  #sideNav li { display: block; }
+
+  section {
+    min-height: 100vh;
+    padding: 3rem 5rem;
+    box-sizing: border-box;
+  }
+
+  h1 { font-size: 6rem; line-height: 5.5rem; }
+}
